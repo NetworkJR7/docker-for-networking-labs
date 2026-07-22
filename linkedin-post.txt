@@ -1,0 +1,26 @@
+🚀 New GitHub Project: Docker for Networking Labs
+
+I've recently started building a new repository focused on learning and practicing Docker from a Network Engineer's perspective.
+
+The goal is to understand how containerization technologies are used in modern networking, datacenter environments, network automation, and routing labs.
+
+Current content includes:
+
+✅ Docker Fundamentals
+✅ Core Concepts (Images, Containers, Volumes, Networks, Docker Hub)
+✅ Linux Container Fundamentals Lab
+✅ Basic networking verification and troubleshooting inside containers
+
+Planned labs:
+
+🔹 Docker Bridge Networking
+🔹 FRRouting with OSPF
+🔹 FRRouting with BGP
+🔹 Containerlab Introduction
+🔹 Networking-focused container environments
+
+This project is part of my ongoing journey into Linux networking, Docker, FRRouting, BGP, and modern datacenter technologies.
+
+Feedback and suggestions are always welcome.
+
+#Docker #Networking #Linux #NetworkEngineering #FRRouting #CCNP #BGP #OSPF #Datacenter #Containerlab #Infrastructure #LearningInPublic
