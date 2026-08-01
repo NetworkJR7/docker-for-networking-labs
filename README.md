@@ -326,7 +326,6 @@ docker-for-networking-labs
 ```
 ---
 
-## Author
 
 ## Repository Statistics
 
@@ -334,6 +333,8 @@ docker-for-networking-labs
 - 🧪 Hands-on Labs: 4
 - 🐳 Docker Technologies: Containers, Networks, Volumes, Compose
 - 🌐 Routing Protocols: OSPF (Completed), BGP (Planned)
+
+## Author
 
 Jaime Rosero
 
