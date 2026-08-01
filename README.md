@@ -1,8 +1,42 @@
 # Docker for Networking Labs
 
-![Docker](images/docker-logo.png)
+> **Learn Docker from a Network Engineer's perspective through progressive documentation and hands-on labs.**
 
-Docker fundamentals and networking labs focused on network engineers.
+<p align="center">
+  <img src="images/docker-logo.png" width="250">
+</p>
+
+![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-FCC624?logo=linux&logoColor=black)
+![FRRouting](https://img.shields.io/badge/FRRouting-Networking-blue)
+![OSPF](https://img.shields.io/badge/OSPF-Lab-success)
+
+A practical learning path for Network Engineers learning Docker, Linux Networking and FRRouting through hands-on labs.
+
+# 📚 Learning Path
+
+This repository is organized as a progressive learning path for Network Engineers interested in Docker and modern networking technologies.
+
+## Documentation
+
+| Document | Status |
+|----------|--------|
+- [Docker Fundamentals](docs/01-what-is-docker.md) | ✅ |
+- [Docker Basic Concepts](docs/02-docker-basic-concepts.md) | 🟡 |
+- [Docker in Networking](docs/03-docker-in-networking.md) | 🚧 |
+- [Useful Networking Containers](docs/04-useful-networking-containers.md) | 🚧 |
+
+---
+
+## Hands-on Labs
+
+
+| Lab | Topic | Status |
+|------|-------|--------|
+| [Lab01](labs/lab01-linux-container/) | Linux Containers | ✅ |
+| [Lab02](labs/lab02-docker-bridge-network/) | Docker Bridge | ✅ |
+| [Lab03](labs/lab03-frr-ospf/) | FRRouting OSPF | ✅ |
+| [Bonus01](labs/bonus01-docker-volumes/) | Docker Volumes | ✅ |
 
 
 ## Overview
@@ -259,21 +293,12 @@ Validate Python and Ansible playbooks safely before production deployment.
 
 ---
 
-## Future Labs
-
-* Docker Networking Fundamentals
-* Linux Networking Inside Containers
-* FRRouting OSPF Lab
-* FRRouting BGP Lab
-* Containerlab Introduction
-* EVPN/VXLAN Concepts with Containers
-
----
-
 ## Skills Demonstrated
 
 * Docker Fundamentals
 * Linux Networking
+* Docker Compose
+* Containerized Networking
 * Routing Protocols
 * FRRouting
 * Troubleshooting
@@ -282,10 +307,42 @@ Validate Python and Ansible playbooks safely before production deployment.
 
 ---
 
+## Upcoming Labs
+
+- 🔹 Lab04 – FRRouting BGP
+- 🔹 Lab05 – Containerlab Introduction
+
+---
+
+## Repository Structure
+
+```text
+docker-for-networking-labs
+│
+├── docs/
+├── labs/
+├── images/
+└── README.md
+```
+---
+
 ## Author
+
+## Repository Statistics
+
+- 📚 Documentation Guides: 4
+- 🧪 Hands-on Labs: 4
+- 🐳 Docker Technologies: Containers, Networks, Volumes, Compose
+- 🌐 Routing Protocols: OSPF (Completed), BGP (Planned)
 
 Jaime Rosero
 
 Network Engineer | CCNA | CCNP Enterprise (In Progress)
 
 GitHub: NetworkJR7
+
+---
+
+## About this Project
+
+This repository is continuously updated with new networking labs as part of my professional learning journey toward modern Data Center Networking and Network Automation.
