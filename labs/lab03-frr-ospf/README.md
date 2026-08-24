@@ -33,34 +33,20 @@ After completing this lab you will be able to:
 - Linux Networking
 
 ---
-
 # Topology
 
-```text
-                OSPF Area 0
+![FRRouting OSPF Topology](images/frr-ospf-topology.png)
 
-      10.10.12.0/24
+The lab consists of two FRRouting routers connected through the Docker bridge network `ospf_net`.
 
-+-----------------------------+
-|       Docker Network        |
-|         ospf_net            |
-+-------------+---------------+
-              |
-      -----------------
-      |               |
-+------------+   +------------+
-|   FRR1     |---|   FRR2     |
-| 10.10.12.2 |   | 10.10.12.3 |
-| RID 1.1.1.1|   | RID 2.2.2.2|
-+------------+   +------------+
+| Device | Interface | IP Address |
+|--------|-----------|------------|
+| FRR1 | eth0 | 10.10.12.2/24 |
+| FRR1 | lo0 | 1.1.1.1/32 |
+| FRR2 | eth0 | 10.10.12.3/24 |
+| FRR2 | lo0 | 2.2.2.2/32 |
 
-Loopbacks
-
-FRR1 → 1.1.1.1/32
-
-FRR2 → 2.2.2.2/32
-```
-
+OSPF Area 0 is enabled across the `10.10.12.0/24` transit network.
 ---
 
 # Project Structure
@@ -225,6 +211,9 @@ Verify:
 
 ```text
 show ip ospf neighbor
+show ip ospf interface
+show ip route ospf
+show interface eth0
 ```
 
 Check that both routers belong to the same subnet and Area 0.
@@ -247,6 +236,8 @@ If no process appears, verify the **daemons** file.
 
 ```bash
 docker compose ps
+docker inspect frr1
+docker exec frr1 ps aux | grep ospfddocker compose ps
 ```
 
 Restart the lab:
@@ -263,6 +254,7 @@ docker compose up -d
 
 ```bash
 docker compose config
+
 ```
 
 Use this command before deploying the topology to detect YAML syntax errors.
