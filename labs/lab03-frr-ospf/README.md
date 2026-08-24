@@ -187,19 +187,61 @@ Expected output:
 
 # Verification Commands
 
+## Docker Verification
+
+Check container status:
+
 ```bash
 docker compose ps
+```
 
-docker exec -it frr1 vtysh
+Verify that the OSPF process is running:
 
-show ip ospf neighbor
+```bash
+docker exec frr1 ps aux | grep ospfd
+docker exec frr2 ps aux | grep ospfd
+```
 
-show ip route ospf
+Test loopback connectivity:
 
+```bash
 docker exec frr1 ping -c 4 2.2.2.2
-
 docker exec frr2 ping -c 4 1.1.1.1
 ```
+
+## FRRouting Verification
+
+Connect to FRR1:
+
+```bash
+docker exec -it frr1 vtysh
+```
+
+Verify OSPF neighbors:
+
+```text
+show ip ospf neighbor
+```
+
+Verify OSPF-learned routes:
+
+```text
+show ip route ospf
+```
+
+Verify OSPF interface status:
+
+```text
+show ip ospf interface
+```
+
+Verify interface information:
+
+```text
+show interface eth0
+```
+
+The same commands can be executed on FRR2.
 
 ---
 
@@ -207,57 +249,129 @@ docker exec frr2 ping -c 4 1.1.1.1
 
 ## OSPF Neighbor Does Not Form
 
-Verify:
+Start by checking the neighbor table:
 
 ```text
 show ip ospf neighbor
-show ip ospf interface
-show ip route ospf
+```
+
+If no neighbor appears, verify:
+
+- Both routers are in the same IP subnet.
+- Both interfaces participate in OSPF Area 0.
+- The OSPF daemon is running.
+- The Docker network is operational.
+- Interface addressing is correct.
+
+Check the interface:
+
+```text
 show interface eth0
 ```
 
-Check that both routers belong to the same subnet and Area 0.
+Check OSPF interface information:
 
----
+```text
+show ip ospf interface
+```
+
+## OSPF Neighbor Is Not Full
+
+If a neighbor appears but does not reach the `Full` state, verify:
+
+- Area ID
+- Interface addressing
+- OSPF timers
+- MTU consistency
+- Docker connectivity between containers
+
+Check basic connectivity:
+
+```bash
+docker exec frr1 ping -c 4 10.10.12.3
+docker exec frr2 ping -c 4 10.10.12.2
+```
 
 ## OSPF Process Not Running
 
-Verify:
+Verify the process:
 
 ```bash
 docker exec frr1 ps aux | grep ospfd
+docker exec frr2 ps aux | grep ospfd
 ```
 
-If no process appears, verify the **daemons** file.
+If `ospfd` is not running, verify the FRRouting daemon configuration:
 
----
+```bash
+docker exec frr1 cat /etc/frr/daemons
+docker exec frr2 cat /etc/frr/daemons
+```
+
+The OSPF daemon should be enabled.
+
+## FRRouting Configuration Issues
+
+Verify that the configuration directory is correctly mounted:
+
+```bash
+docker inspect frr1
+docker inspect frr2
+```
+
+Confirm that `/etc/frr` contains:
+
+```text
+daemons
+frr.conf
+vtysh.conf
+```
+
+You can verify this directly:
+
+```bash
+docker exec frr1 ls -l /etc/frr
+docker exec frr2 ls -l /etc/frr
+```
 
 ## Containers Are Not Running
 
+Check container status:
+
 ```bash
 docker compose ps
-docker inspect frr1
-docker exec frr1 ps aux | grep ospfddocker compose ps
 ```
 
-Restart the lab:
+Restart the lab if necessary:
 
 ```bash
 docker compose down
-
 docker compose up -d
 ```
 
----
-
-## Docker Compose Validation
+Check logs if a container fails to start:
 
 ```bash
-docker compose config
-
+docker compose logs frr1
+docker compose logs frr2
 ```
 
-Use this command before deploying the topology to detect YAML syntax errors.
+## OSPF Route Is Missing
+
+Check whether the adjacency is established:
+
+```text
+show ip ospf neighbor
+```
+
+Then verify the routing table:
+
+```text
+show ip route ospf
+```
+
+If the neighbor is `Full` but the remote loopback is missing, review the OSPF network statements in `frr.conf`.
+
 
 ---
 
@@ -350,11 +464,19 @@ The lab was successfully validated with:
 
 # Key Takeaways
 
-This lab demonstrates how Docker Compose can be used to deploy reproducible routing environments with FRRouting.
+This lab demonstrates how Docker Compose can be used to build reproducible routing environments with FRRouting.
 
-Using containers significantly reduces the resources required compared to traditional virtual machines while providing an excellent platform for learning routing protocols such as OSPF and BGP.
+Key concepts practiced:
 
-The same deployment model can be easily extended to larger topologies or migrated to Containerlab for more advanced networking scenarios.
+- Docker bridge networking
+- Multi-container routing labs
+- FRRouting configuration
+- OSPF Area 0
+- OSPF neighbor formation
+- Dynamic route exchange
+- Loopback reachability
+- Docker and FRRouting troubleshooting
+- Persistent configuration through bind mounts
 
 
 # Completed Labs
