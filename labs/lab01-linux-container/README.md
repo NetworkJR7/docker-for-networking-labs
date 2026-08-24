@@ -5,6 +5,9 @@
 Deploy a basic Ubuntu container, install networking tools, and verify connectivity using standard Linux networking commands.
 
 ---
+## Lab Overview
+
+![Linux Container Lab](images/lab01-linux-container-topology.png)
 
 ## Topology
 
