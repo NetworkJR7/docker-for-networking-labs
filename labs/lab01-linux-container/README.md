@@ -1,4 +1,8 @@
-# Lab 01 – Linux Container Fundamentals
+## Topology
+
+The Ubuntu container runs on the Docker Engine installed on the Ubuntu NUC.
+
+Docker provides the container with a virtual Ethernet interface and a default route through the Docker bridge network.# Lab 01 – Linux Container Fundamentals
 
 ## Objective
 
@@ -11,22 +15,9 @@ Deploy a basic Ubuntu container, install networking tools, and verify connectivi
 
 ## Topology
 
-```text
-+----------------------+
-| Ubuntu Host (NUC)    |
-| Docker Engine        |
-+----------+-----------+
-           |
-           |
-      Docker Bridge
-           |
-           |
-+----------+-----------+
-| Ubuntu Container     |
-| eth0                 |
-| Default Route        |
-+----------------------+
-```
+The Ubuntu container runs on the Docker Engine installed on the Ubuntu NUC.
+
+Docker provides the container with a virtual Ethernet interface and a default route through the Docker bridge network.
 
 ---
 
