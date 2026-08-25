@@ -34,24 +34,14 @@ After completing this lab you will be able to:
 
 ---
 
-# Lab Topology
+## Topology
 
-```text
-                 Ubuntu Host
+![Docker Bind Mount Lab](images/bonus01-bind-mount-topology.png)
 
-~/Labs/docker-for-networking-labs/
+The host directory `./configs/frr1` is mounted inside the FRRouting container as `/etc/frr`.
 
-configs/frr1
-        │
-        │
-        │ Bind Mount
-        ▼
-+-----------------------------+
-|        FRR1 Container       |
-|                             |
-|        /etc/frr             |
-+-----------------------------+
-```
+This bind mount allows the FRRouting configuration to persist independently of the container lifecycle.
+
 
 ---
 
