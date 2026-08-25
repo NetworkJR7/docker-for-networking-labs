@@ -11,7 +11,9 @@
 ![FRRouting](https://img.shields.io/badge/FRRouting-Networking-blue)
 ![OSPF](https://img.shields.io/badge/OSPF-Lab-success)
 
-A practical learning path for Network Engineers learning Docker, Linux Networking and FRRouting through hands-on labs.
+A hands-on learning repository focused on Docker, Linux networking, FRRouting and modern network lab environments.
+
+The project combines practical labs, troubleshooting workflows and standardized technical diagrams designed from a Network Engineer's perspective. 
 
 # 📚 Learning Path
 
@@ -38,6 +40,27 @@ This repository is organized as a progressive learning path for Network Engineer
 | [Lab03](labs/lab03-frr-ospf/) | FRRouting OSPF | ✅ |
 | [Bonus01](labs/bonus01-docker-volumes/) | Docker Volumes | ✅ |
 
+
+## Visual Documentation Standard
+
+The hands-on labs use the **NetworkJR7 Design System** to maintain a consistent visual language across networking diagrams and technical documentation.
+
+Standardized topology diagrams are currently included in:
+
+- Lab01 – Linux Container
+- Lab02 – Docker Bridge Network
+- Lab03 – FRRouting OSPF
+- Bonus01 – Docker Volumes / Bind Mounts
+
+The diagrams follow common standards for:
+
+- Component size and spacing
+- Typography
+- Network labels
+- Connector semantics
+- White background
+- Consistent export margins
+- GitHub-friendly PNG output
 
 ## Overview
 
@@ -307,10 +330,17 @@ Validate Python and Ansible playbooks safely before production deployment.
 
 ---
 
-## Upcoming Labs
 
-- 🔹 Lab04 – FRRouting BGP
-- 🔹 Lab05 – Containerlab Introduction
+## Roadmap
+
+- [x] Lab01 – Linux Container Fundamentals
+- [x] Lab02 – Docker Bridge Networking
+- [x] Lab03 – FRRouting OSPF
+- [x] Bonus01 – Docker Volumes and Bind Mounts
+- [ ] Lab04 – FRRouting BGP
+- [ ] Lab05 – Containerlab Introduction
+- [ ] Lab06 – Multi-Router BGP
+- [ ] Lab07 – VXLAN / EVPN Foundations
 
 ---
 
