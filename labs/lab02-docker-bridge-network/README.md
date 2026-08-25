@@ -22,21 +22,13 @@ By completing this lab you will learn how to:
 
 ---
 
-# Topology
+## Topology
 
-```text
-                  Ubuntu Host
-               Docker Engine
-                     │
-          Docker Bridge Network
-             (network-lab)
-         ┌─────────┴─────────┐
-         │                   │
-  +--------------+    +--------------+
-  | Ubuntu-1     |    | Ubuntu-2     |
-  | 172.18.0.2   |    | 172.18.0.3   |
-  +--------------+    +--------------+
-```
+![Docker Bridge Network Lab](images/lab02-docker-bridge-topology.png)
+
+Two Ubuntu containers are connected to the same user-defined Docker bridge network, `network-lab`.
+
+The lab validates container-to-container communication using Docker's bridge networking model.
 
 ---
 
