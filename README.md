@@ -32,14 +32,17 @@ This repository is organized as a progressive learning path for Network Engineer
 
 ## Hands-on Labs
 
-
 | Lab | Topic | Status |
-|------|-------|--------|
+|---|---|---|
 | [Lab01](labs/lab01-linux-container/) | Linux Containers | ✅ |
 | [Lab02](labs/lab02-docker-bridge-network/) | Docker Bridge | ✅ |
 | [Lab03](labs/lab03-frr-ospf/) | FRRouting OSPF | ✅ |
-| [Bonus01](labs/bonus01-docker-volumes/) | Docker Volumes | ✅ |
+| [Bonus01](labs/bonus01-docker-volumes/) | Docker Volumes / Bind Mounts | ✅ |
+| [Lab04](labs/lab04-frr-bgp/) | FRRouting eBGP | ✅ |
+| [Lab05](labs/lab05-containerlab-intro/) | Containerlab Introduction | ✅ |
 
+
+---
 
 ## Visual Documentation Standard
 
@@ -51,6 +54,8 @@ Standardized topology diagrams are currently included in:
 - Lab02 – Docker Bridge Network
 - Lab03 – FRRouting OSPF
 - Bonus01 – Docker Volumes / Bind Mounts
+- Lab04 – FRRouting eBGP
+- Lab05 – Containerlab Introduction
 
 The diagrams follow common standards for:
 
@@ -337,8 +342,8 @@ Validate Python and Ansible playbooks safely before production deployment.
 - [x] Lab02 – Docker Bridge Networking
 - [x] Lab03 – FRRouting OSPF
 - [x] Bonus01 – Docker Volumes and Bind Mounts
-- [ ] Lab04 – FRRouting BGP
-- [ ] Lab05 – Containerlab Introduction
+- [x] Lab04 – FRRouting BGP
+- [x] Lab05 – Containerlab Introduction
 - [ ] Lab06 – Multi-Router BGP
 - [ ] Lab07 – VXLAN / EVPN Foundations
 
