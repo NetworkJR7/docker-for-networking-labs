@@ -365,7 +365,7 @@ docker-for-networking-labs
 ## Repository Statistics
 
 - 📚 Documentation Guides: 4
-- 🧪 Hands-on Labs: 4
+- 🧪 Hands-on Labs: 6
 - 🐳 Docker Technologies: Containers, Networks, Volumes, Compose
 - 🌐 Routing Protocols: OSPF (Completed), BGP (Planned)
 
