@@ -1,0 +1,25 @@
+name: lab05
+
+mgmt:
+  network: clab05
+  ipv4-subnet: 172.30.50.0/24
+
+topology:
+  nodes:
+
+    frr1:
+      kind: linux
+      image: frrouting/frr:latest
+      binds:
+        - ./configs/frr1:/etc/frr
+
+    frr2:
+      kind: linux
+      image: frrouting/frr:latest
+      binds:
+        - ./configs/frr2:/etc/frr
+
+  links:
+    - endpoints:
+        - frr1:eth1
+        - frr2:eth1
