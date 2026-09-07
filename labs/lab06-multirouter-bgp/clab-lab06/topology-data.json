@@ -1,0 +1,146 @@
+{
+  "name": "lab06",
+  "type": "clab",
+  "clab": {
+    "config": {
+      "prefix": "clab",
+      "mgmt": {
+        "network": "clab06",
+        "bridge": "br-f69fcc16b3b2",
+        "ipv4-subnet": "172.30.60.0/24",
+        "ipv4-gw": "172.30.60.1",
+        "external-access": true
+      }
+    }
+  },
+  "ssh-pub-keys": ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJof4/J8yoTXBqGRPTfyrSmSyJjX0Bb8WoVeHUFjMCyF","ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAID8oKYt+CxlRZ0No760ue9TjDV2LgnemCEw8LFtJrXi7"],
+  "nodes": {
+    "r1": {
+      "index": "0",
+      "shortname": "r1",
+      "longname": "clab-lab06-r1",
+      "fqdn": "r1.lab06.io",
+      "group": "",
+      "labdir": "/home/jaime/Labs/docker-for-networking-labs/labs/lab06-multirouter-bgp/clab-lab06/r1",
+      "kind": "linux",
+      "image": "frrouting/frr:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.30.60.3",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-f69fcc16b3b2",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/jaime/Labs/docker-for-networking-labs/labs/lab06-multirouter-bgp/clab-lab06/r1",
+        "clab-node-longname": "clab-lab06-r1",
+        "clab-node-name": "r1",
+        "clab-node-type": "",
+        "clab-owner": "jaime",
+        "clab-topo-file": "/home/jaime/Labs/docker-for-networking-labs/labs/lab06-multirouter-bgp/lab06.clab.yml",
+        "containerlab": "lab06"
+      },
+      "port-bindings": [
+      ]
+    },
+    "r2": {
+      "index": "1",
+      "shortname": "r2",
+      "longname": "clab-lab06-r2",
+      "fqdn": "r2.lab06.io",
+      "group": "",
+      "labdir": "/home/jaime/Labs/docker-for-networking-labs/labs/lab06-multirouter-bgp/clab-lab06/r2",
+      "kind": "linux",
+      "image": "frrouting/frr:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.30.60.4",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-f69fcc16b3b2",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/jaime/Labs/docker-for-networking-labs/labs/lab06-multirouter-bgp/clab-lab06/r2",
+        "clab-node-longname": "clab-lab06-r2",
+        "clab-node-name": "r2",
+        "clab-node-type": "",
+        "clab-owner": "jaime",
+        "clab-topo-file": "/home/jaime/Labs/docker-for-networking-labs/labs/lab06-multirouter-bgp/lab06.clab.yml",
+        "containerlab": "lab06"
+      },
+      "port-bindings": [
+      ]
+    },
+    "r3": {
+      "index": "2",
+      "shortname": "r3",
+      "longname": "clab-lab06-r3",
+      "fqdn": "r3.lab06.io",
+      "group": "",
+      "labdir": "/home/jaime/Labs/docker-for-networking-labs/labs/lab06-multirouter-bgp/clab-lab06/r3",
+      "kind": "linux",
+      "image": "frrouting/frr:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.30.60.2",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-f69fcc16b3b2",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/jaime/Labs/docker-for-networking-labs/labs/lab06-multirouter-bgp/clab-lab06/r3",
+        "clab-node-longname": "clab-lab06-r3",
+        "clab-node-name": "r3",
+        "clab-node-type": "",
+        "clab-owner": "jaime",
+        "clab-topo-file": "/home/jaime/Labs/docker-for-networking-labs/labs/lab06-multirouter-bgp/lab06.clab.yml",
+        "containerlab": "lab06"
+      },
+      "port-bindings": [
+      ]
+    }
+  },
+  "links": [
+    {
+      "endpoints": {
+        "a": {
+          "node": "r1",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:16:5c:0e",
+          "peer": "z"
+        },
+        "z": {
+          "node": "r2",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:aa:84:54",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "r2",
+          "interface": "eth2",
+          "mac": "aa:c1:ab:0e:c3:67",
+          "peer": "z"
+        },
+        "z": {
+          "node": "r3",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:55:d4:fe",
+          "peer": "a"
+        }
+      }
+    }
+  ]
+}

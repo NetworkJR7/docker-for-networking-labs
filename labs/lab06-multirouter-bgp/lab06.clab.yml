@@ -1,0 +1,35 @@
+name: lab06
+
+mgmt:
+  network: clab06
+  ipv4-subnet: 172.30.60.0/24
+
+topology:
+  nodes:
+
+    r1:
+      kind: linux
+      image: frrouting/frr:latest
+      binds:
+        - ./configs/r1:/etc/frr
+
+    r2:
+      kind: linux
+      image: frrouting/frr:latest
+      binds:
+        - ./configs/r2:/etc/frr
+
+    r3:
+      kind: linux
+      image: frrouting/frr:latest
+      binds:
+        - ./configs/r3:/etc/frr
+
+  links:
+    - endpoints:
+        - r1:eth1
+        - r2:eth1
+
+    - endpoints:
+        - r2:eth2
+        - r3:eth1
