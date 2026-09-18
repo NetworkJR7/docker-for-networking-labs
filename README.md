@@ -40,13 +40,15 @@ This repository is organized as a progressive learning path for Network Engineer
 | [Bonus01](labs/bonus01-docker-volumes/) | Docker Volumes / Bind Mounts | ✅ |
 | [Lab04](labs/lab04-frr-bgp/) | FRRouting eBGP | ✅ |
 | [Lab05](labs/lab05-containerlab-intro/) | Containerlab Introduction | ✅ |
-
+| [Lab06](labs/lab06-multirouter-bgp/) | Multi - Router eBGP | ✅ |
+| [Lab07](labs/lab07-vxlan-foundations/) | VXLAN L2 Foundations | ✅ |
 
 ---
 
 ## Visual Documentation Standard
 
 The hands-on labs use the **NetworkJR7 Design System** to maintain a consistent visual language across networking diagrams and technical documentation.
+The visual standard now includes multi-AS BGP, underlay/overlay separation, VTEP representation and VXLAN/VNI documentation.
 
 Standardized topology diagrams are currently included in:
 
@@ -56,6 +58,8 @@ Standardized topology diagrams are currently included in:
 - Bonus01 – Docker Volumes / Bind Mounts
 - Lab04 – FRRouting eBGP
 - Lab05 – Containerlab Introduction
+- Lab06 - Multi - Router eBGP
+- Lab07 – VXLAN L2 Foundations
 
 The diagrams follow common standards for:
 
@@ -344,8 +348,10 @@ Validate Python and Ansible playbooks safely before production deployment.
 - [x] Bonus01 – Docker Volumes and Bind Mounts
 - [x] Lab04 – FRRouting BGP
 - [x] Lab05 – Containerlab Introduction
-- [ ] Lab06 – Multi-Router BGP
-- [ ] Lab07 – VXLAN / EVPN Foundations
+- [x] Lab06 – Multi - Router BGP
+- [x] Lab07 – VXLAN L2 Foundations
+- [ ] Lab08 – BGP EVPN Foundations
+- [ ] Lab09 – VXLAN / EVPN Fabric
 
 ---
 
@@ -365,7 +371,7 @@ docker-for-networking-labs
 ## Repository Statistics
 
 - 📚 Documentation Guides: 4
-- 🧪 Hands-on Labs: 6
+- 🧪 Hands-on Labs: 8
 - 🐳 Docker Technologies: Containers, Networks, Volumes, Compose
 - 🌐 Routing Protocols: OSPF (Completed), BGP (Planned)
 
