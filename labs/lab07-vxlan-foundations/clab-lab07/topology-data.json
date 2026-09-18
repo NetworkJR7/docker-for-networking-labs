@@ -1,0 +1,193 @@
+{
+  "name": "lab07",
+  "type": "clab",
+  "clab": {
+    "config": {
+      "prefix": "clab",
+      "mgmt": {
+        "network": "clab07",
+        "bridge": "br-833a6dedad23",
+        "ipv4-subnet": "172.30.70.0/24",
+        "ipv4-gw": "172.30.70.1",
+        "external-access": true
+      }
+    }
+  },
+  "ssh-pub-keys": [],
+  "nodes": {
+    "host1": {
+      "index": "0",
+      "shortname": "host1",
+      "longname": "clab-lab07-host1",
+      "fqdn": "host1.lab07.io",
+      "group": "",
+      "labdir": "/home/jaime7/Labs/docker-for-networking-labs/labs/lab07-vxlan-foundations/clab-lab07/host1",
+      "kind": "linux",
+      "image": "alpine:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.30.70.2",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-833a6dedad23",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/jaime7/Labs/docker-for-networking-labs/labs/lab07-vxlan-foundations/clab-lab07/host1",
+        "clab-node-longname": "clab-lab07-host1",
+        "clab-node-name": "host1",
+        "clab-node-type": "",
+        "clab-owner": "jaime7",
+        "clab-topo-file": "/home/jaime7/Labs/docker-for-networking-labs/labs/lab07-vxlan-foundations/lab07.clab.yml",
+        "containerlab": "lab07"
+      },
+      "port-bindings": [
+      ]
+    },
+    "host2": {
+      "index": "1",
+      "shortname": "host2",
+      "longname": "clab-lab07-host2",
+      "fqdn": "host2.lab07.io",
+      "group": "",
+      "labdir": "/home/jaime7/Labs/docker-for-networking-labs/labs/lab07-vxlan-foundations/clab-lab07/host2",
+      "kind": "linux",
+      "image": "alpine:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.30.70.4",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-833a6dedad23",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/jaime7/Labs/docker-for-networking-labs/labs/lab07-vxlan-foundations/clab-lab07/host2",
+        "clab-node-longname": "clab-lab07-host2",
+        "clab-node-name": "host2",
+        "clab-node-type": "",
+        "clab-owner": "jaime7",
+        "clab-topo-file": "/home/jaime7/Labs/docker-for-networking-labs/labs/lab07-vxlan-foundations/lab07.clab.yml",
+        "containerlab": "lab07"
+      },
+      "port-bindings": [
+      ]
+    },
+    "leaf1": {
+      "index": "2",
+      "shortname": "leaf1",
+      "longname": "clab-lab07-leaf1",
+      "fqdn": "leaf1.lab07.io",
+      "group": "",
+      "labdir": "/home/jaime7/Labs/docker-for-networking-labs/labs/lab07-vxlan-foundations/clab-lab07/leaf1",
+      "kind": "linux",
+      "image": "frrouting/frr:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.30.70.5",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-833a6dedad23",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/jaime7/Labs/docker-for-networking-labs/labs/lab07-vxlan-foundations/clab-lab07/leaf1",
+        "clab-node-longname": "clab-lab07-leaf1",
+        "clab-node-name": "leaf1",
+        "clab-node-type": "",
+        "clab-owner": "jaime7",
+        "clab-topo-file": "/home/jaime7/Labs/docker-for-networking-labs/labs/lab07-vxlan-foundations/lab07.clab.yml",
+        "containerlab": "lab07"
+      },
+      "port-bindings": [
+      ]
+    },
+    "leaf2": {
+      "index": "3",
+      "shortname": "leaf2",
+      "longname": "clab-lab07-leaf2",
+      "fqdn": "leaf2.lab07.io",
+      "group": "",
+      "labdir": "/home/jaime7/Labs/docker-for-networking-labs/labs/lab07-vxlan-foundations/clab-lab07/leaf2",
+      "kind": "linux",
+      "image": "frrouting/frr:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.30.70.3",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-833a6dedad23",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/jaime7/Labs/docker-for-networking-labs/labs/lab07-vxlan-foundations/clab-lab07/leaf2",
+        "clab-node-longname": "clab-lab07-leaf2",
+        "clab-node-name": "leaf2",
+        "clab-node-type": "",
+        "clab-owner": "jaime7",
+        "clab-topo-file": "/home/jaime7/Labs/docker-for-networking-labs/labs/lab07-vxlan-foundations/lab07.clab.yml",
+        "containerlab": "lab07"
+      },
+      "port-bindings": [
+      ]
+    }
+  },
+  "links": [
+    {
+      "endpoints": {
+        "a": {
+          "node": "leaf1",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:e8:98:f2",
+          "peer": "z"
+        },
+        "z": {
+          "node": "leaf2",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:9c:80:47",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "host1",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:37:a6:d0",
+          "peer": "z"
+        },
+        "z": {
+          "node": "leaf1",
+          "interface": "eth2",
+          "mac": "aa:c1:ab:35:61:02",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "host2",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:67:0a:44",
+          "peer": "z"
+        },
+        "z": {
+          "node": "leaf2",
+          "interface": "eth2",
+          "mac": "aa:c1:ab:99:b0:af",
+          "peer": "a"
+        }
+      }
+    }
+  ]
+}
