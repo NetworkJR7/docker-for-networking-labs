@@ -40,15 +40,16 @@ This repository is organized as a progressive learning path for Network Engineer
 | [Bonus01](labs/bonus01-docker-volumes/) | Docker Volumes / Bind Mounts | ✅ |
 | [Lab04](labs/lab04-frr-bgp/) | FRRouting eBGP | ✅ |
 | [Lab05](labs/lab05-containerlab-intro/) | Containerlab Introduction | ✅ |
-| [Lab06](labs/lab06-multirouter-bgp/) | Multi - Router eBGP | ✅ |
+| [Lab06](labs/lab06-multirouter-bgp/) | Multi-Router eBGP | ✅ |
 | [Lab07](labs/lab07-vxlan-foundations/) | VXLAN L2 Foundations | ✅ |
+| [Lab08](labs/lab08-bgp-evpn-foundations/) | BGP EVPN Foundations | ✅ |
 
 ---
 
 ## Visual Documentation Standard
 
 The hands-on labs use the **NetworkJR7 Design System** to maintain a consistent visual language across networking diagrams and technical documentation.
-The visual standard now includes multi-AS BGP, underlay/overlay separation, VTEP representation and VXLAN/VNI documentation.
+The visual standard now includes multi-AS BGP, underlay/overlay separation, VTEP representation, VXLAN/VNI documentation and BGP EVPN control-plane visualization.
 
 Standardized topology diagrams are currently included in:
 
@@ -58,8 +59,9 @@ Standardized topology diagrams are currently included in:
 - Bonus01 – Docker Volumes / Bind Mounts
 - Lab04 – FRRouting eBGP
 - Lab05 – Containerlab Introduction
-- Lab06 - Multi - Router eBGP
+- Lab06 - Multi-Router eBGP
 - Lab07 – VXLAN L2 Foundations
+- Lab08 – BGP EVPN Foundations
 
 The diagrams follow common standards for:
 
@@ -346,11 +348,11 @@ Validate Python and Ansible playbooks safely before production deployment.
 - [x] Lab02 – Docker Bridge Networking
 - [x] Lab03 – FRRouting OSPF
 - [x] Bonus01 – Docker Volumes and Bind Mounts
-- [x] Lab04 – FRRouting BGP
+- [x] Lab04 – FRRouting eBGP
 - [x] Lab05 – Containerlab Introduction
-- [x] Lab06 – Multi - Router BGP
+- [x] Lab06 – Multi-Router eBGP
 - [x] Lab07 – VXLAN L2 Foundations
-- [ ] Lab08 – BGP EVPN Foundations
+- [x] Lab08 – BGP EVPN Foundations
 - [ ] Lab09 – VXLAN / EVPN Fabric
 
 ---
@@ -371,7 +373,7 @@ docker-for-networking-labs
 ## Repository Statistics
 
 - 📚 Documentation Guides: 4
-- 🧪 Hands-on Labs: 8
+- 🧪 Hands-on Labs: 9
 - 🐳 Docker Technologies: Containers, Networks, Volumes, Compose
 - 🌐 Routing Protocols: OSPF (Completed), BGP (Planned)
 
