@@ -59,7 +59,7 @@ Standardized topology diagrams are currently included in:
 - Bonus01 – Docker Volumes / Bind Mounts
 - Lab04 – FRRouting eBGP
 - Lab05 – Containerlab Introduction
-- Lab06 - Multi-Router eBGP
+- Lab06 – Multi-Router eBGP
 - Lab07 – VXLAN L2 Foundations
 - Lab08 – BGP EVPN Foundations
 
@@ -375,7 +375,9 @@ docker-for-networking-labs
 - 📚 Documentation Guides: 4
 - 🧪 Hands-on Labs: 9
 - 🐳 Docker Technologies: Containers, Networks, Volumes, Compose
-- 🌐 Routing Protocols: OSPF (Completed), BGP (Planned)
+- 🌐 Routing Protocols: OSPF, eBGP, BGP EVPN
+- 🏢 Datacenter Networking: VXLAN, VNI, VTEP, EVPN
+
 
 ## Author
 
