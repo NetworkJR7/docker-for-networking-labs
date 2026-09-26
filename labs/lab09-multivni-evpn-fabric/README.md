@@ -8,16 +8,7 @@ The objective is to demonstrate how multiple isolated Layer 2 segments can be tr
 
 ## Topology
 
-```text
-                         Spine
-                        AS65000
-                      /         \
-                     /           \
-                Leaf1             Leaf2
-               AS65101           AS65102
-              /      \           /      \
-           HostA    HostB     HostC    HostD
-```
+![Lab09 Multi-VNI EVPN Fabric Topology](images/lab09-multivni-evpn-fabric-topology.png)
 
 ### Segment Mapping
 
@@ -158,6 +149,12 @@ VNI 10200
 
 ---
 
+## EVPN Control Plane Verification
+
+The following output shows the EVPN routing table on Leaf1, including both Type-2 MAC Advertisement routes and Type-3 IMET routes for VNI 10100 and VNI 10200.
+
+![EVPN Table Leaf1](images/evpn-table-leaf1.png)
+
 ## EVPN Type-3 Routes
 
 After creating the VXLAN interfaces, both Leafs advertise EVPN Type-3 IMET routes for each VNI.
@@ -275,9 +272,24 @@ local
 
 and the remote host MAC should point to the remote VTEP.
 
+## Multi-VNI MAC Learning
+
+Leaf1 learns local MAC addresses from its access interfaces and remote MAC addresses through the EVPN control plane.
+
+![EVPN Multi-VNI MAC Learning](images/evpn-mac-multivni-leaf1.png)
+
 ---
 
 ## Connectivity Tests
+
+### Multi-VNI Connectivity
+
+Both Layer 2 segments successfully communicate across the VXLAN fabric.
+
+- HostA → HostC through VNI 10100
+- HostB → HostD through VNI 10200
+
+![Multi-VNI Connectivity](images/multivni-connectivity.png)
 
 ### VNI 10100
 
@@ -307,9 +319,11 @@ Result:
 
 ---
 
-## VNI Isolation
+## Inter-VNI Isolation
 
-Traffic between different VNIs fails because no inter-VNI routing exists.
+Traffic between VNI 10100 and VNI 10200 fails because no Layer 3 inter-VNI routing has been configured.
+
+![Inter-VNI Isolation](images/inter-vni-isolation.png)
 
 Example:
 
