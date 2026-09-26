@@ -1,0 +1,36 @@
+---
+hosta:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.30.90.8
+hostb:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.30.90.4
+hostc:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.30.90.6
+hostd:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.30.90.5
+leaf1:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.30.90.2
+leaf2:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.30.90.3
+spine:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.30.90.7
