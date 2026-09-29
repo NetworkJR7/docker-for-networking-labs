@@ -1,2 +1,13 @@
 # Containerlab generated state
 clab-*/
+
+# Python generated files
+__pycache__/
+*.pyc
+
+# FRR backup files
+*.sav
+
+# Generated automation output
+**/scripts/outputs/
+**/scripts/reports/
