@@ -7,6 +7,11 @@ ip link add br100 type bridge
 ip link set br100 master TENANT-A
 ip link set br100 up
 
+# Anycast Gateway - VLAN 100
+
+ip link set br100 address 02:00:00:00:00:01
+ip addr add 192.168.100.1/24 dev br100
+
 ip link set eth2 master br100
 ip link set eth2 up
 
@@ -22,6 +27,11 @@ ip link set vxlan10100 up
 ip link add br200 type bridge
 ip link set br200 master TENANT-A
 ip link set br200 up
+
+# Anycast Gateway - VLAN 200
+
+ip link set br200 address 02:00:00:00:00:01
+ip addr add 192.168.200.1/24 dev br200
 
 ip link set eth3 master br200
 ip link set eth3 up

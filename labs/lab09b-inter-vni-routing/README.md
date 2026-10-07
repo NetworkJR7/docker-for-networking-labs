@@ -460,7 +460,6 @@ was correctly displayed.
 This demonstrates that creating a VXLAN interface in Linux is not enough to define an L3VNI.
 
 FRR must also associate the VNI with an IP-VRF.
-
 ---
 
 ## Layered Troubleshooting Method
@@ -560,3 +559,63 @@ L2VNI 10200
 ```
 
 The result is successful communication between different tenant subnets across the EVPN/VXLAN fabric.
+---
+
+## Endpoint Convergence After Redeploy
+
+After a complete Containerlab redeploy, the EVPN control plane was already operational:
+
+```text
+BGP EVPN      ✅
+Type-3        ✅
+Type-5        ✅
+L3VNI 10000   ✅
+Router MAC    ✅
+```
+
+However, initial Inter-VNI traffic failed for hosts whose MAC/IP information had not yet been learned and advertised through EVPN Type-2 routes.
+
+For example, before HostC generated traffic, HostB could not reach:
+
+```text
+192.168.100.20
+```
+
+After HostC communicated with its local Anycast Gateway:
+
+```bash
+docker exec clab-lab09b-hostc \
+ping -c 3 192.168.100.1
+```
+
+the remote Leaf learned the host endpoint and installed the corresponding remote host route through the L3VNI.
+
+The Inter-VNI ping then succeeded:
+
+```bash
+docker exec clab-lab09b-hostb \
+ping -c 4 192.168.100.20
+```
+
+Result:
+
+```text
+4 packets transmitted
+4 packets received
+0% packet loss
+```
+
+### Operational Lesson
+
+An EVPN fabric can have:
+
+```text
+BGP EVPN          ✅
+Type-5 prefixes   ✅
+L3VNI             ✅
+Router MAC        ✅
+```
+
+while specific endpoints are not yet fully converged.
+
+Endpoint MAC/IP learning and EVPN Type-2 advertisements are still required for complete host reachability after a fresh redeploy.
